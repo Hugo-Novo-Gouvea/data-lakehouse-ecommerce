@@ -13,12 +13,14 @@ x-airflow-common:
     AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
     AWS_ACCESS_KEY_ID: '${MINIO_ROOT_USER}'
     AWS_SECRET_ACCESS_KEY: '${MINIO_ROOT_PASSWORD}'
+    MINIO_ENDPOINT: '${MINIO_ENDPOINT}'
     AWS_DEFAULT_REGION: 'us-east-1'
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
     - ./data:/opt/airflow/data
+    - ./src:/opt/airflow/src
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on

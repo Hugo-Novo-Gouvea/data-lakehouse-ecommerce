@@ -12,9 +12,11 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def conectar_minio():
+    endpoint = os.getenv('MINIO_ENDPOINT', 'http://localhost:9000')
+    
     s3_client = boto3.client(
         's3',
-        endpoint_url='http://localhost:9000',
+        endpoint_url=endpoint,
         # AGORA SIM: Pegando do .env de forma segura
         aws_access_key_id=os.getenv('MINIO_ROOT_USER'),
         aws_secret_access_key=os.getenv('MINIO_ROOT_PASSWORD'),
