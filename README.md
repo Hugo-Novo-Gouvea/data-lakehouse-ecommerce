@@ -28,9 +28,9 @@ Este projeto utiliza uma stack moderna baseada em containers:
     ```bash
     git clone [https://github.com/SEU_USUARIO/data-lakehouse-ecommerce.git](https://github.com/SEU_USUARIO/data-lakehouse-ecommerce.git)
     ```
-2.  Configure as variáveis de ambiente:
+2.  Configure as variáveis de ambiente criando um .env:
     ```bash
-    cp .env.example .env
+    .env
     # Ajuste as credenciais se necessário
     ```
 3.  Suba o ambiente:
