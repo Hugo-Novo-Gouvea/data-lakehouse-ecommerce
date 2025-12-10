@@ -1,0 +1,11 @@
+# Conexao com AWS/MinIO
+boto3
+botocore
+
+#Requisicoes HTTP (API)
+requests
+
+# Processamento de Dados (usaremos em breve)
+pandas
+pyarrow
+python-dotenv
